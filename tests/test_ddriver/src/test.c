@@ -5,15 +5,17 @@ int main(int argc, char const *argv[])
 {
     int size;
     struct ddriver_state state;
-    int fd = ddriver_open("ddriver");
-    if (fd < 0) {
+    int fd = ddriver_open("/home/students/200111113/ddriver");
+    if (fd < 0)
+    {
         return -1;
     }
     /* Cycle 1: read/write test */
-    char buffer[512]={'a'};
+    char buffer[512] = {'a'};
     char rbuffer[512];
     buffer[511] = '\0';
-    if (fd < 0){
+    if (fd < 0)
+    {
         return fd;
     }
     ddriver_write(fd, buffer, 512);
