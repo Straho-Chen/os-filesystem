@@ -222,6 +222,7 @@ int newfs_mknod(const char *path, mode_t mode, dev_t dev)
 	}
 
 	fname = newfs_get_fname(path);
+	printf("in newfs fname:%s\n", fname);
 
 	if (S_ISREG(mode))
 	{

@@ -36,10 +36,9 @@ int newfs_mount(struct custom_options options);
 int newfs_umount();
 
 int newfs_alloc_dentry(struct newfs_inode *inode, struct newfs_dentry *dentry);
-int newfs_drop_dentry(struct newfs_inode *inode, struct newfs_dentry *dentry);
 struct newfs_inode *newfs_alloc_inode(struct newfs_dentry *dentry);
+void newfs_find_free_block(struct newfs_inode *inode, int bcnt);
 int newfs_sync_inode(struct newfs_inode *inode);
-int newfs_drop_inode(struct newfs_inode *inode);
 struct newfs_inode *newfs_read_inode(struct newfs_dentry *dentry, int ino);
 struct newfs_dentry *newfs_get_dentry(struct newfs_inode *inode, int dir);
 
@@ -67,5 +66,9 @@ int newfs_truncate(const char *, off_t);
 
 int newfs_open(const char *, struct fuse_file_info *);
 int newfs_opendir(const char *, struct fuse_file_info *);
+/******************************************************************************
+ * SECTION: newfs_debug.c
+ *******************************************************************************/
+void newfs_dump_map();
 
 #endif /* _newfs_H_ */
