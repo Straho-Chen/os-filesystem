@@ -1,7 +1,0 @@
-mkdir ./tests/mnt/dir0
-touch ./tests/mnt/file0
-touch ./tests/mnt/dir0/file1
-fusermount -u ./tests/mnt
-
-ls ./tests/mnt/
-ls ./tests/mnt/dir0/
