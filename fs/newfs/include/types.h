@@ -166,7 +166,6 @@ struct newfs_inode_d
     char target_path[NEWFS_MAX_FILE_NAME]; /* store traget path when it is a symlink */
     int dir_cnt;
     NEWFS_FILE_TYPE ftype;
-    uint8_t *data_block_pointer[NEWFS_DATA_PER_FILE];
     int bno[NEWFS_DATA_PER_FILE];
 };
 
